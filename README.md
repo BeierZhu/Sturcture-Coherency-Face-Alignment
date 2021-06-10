@@ -1,5 +1,5 @@
-# Structure-Coherency-aware Deep Feature Learning for Robust Face Alignment
-This repository contains the code for "Structure-Coherency-aware Deep Feature Learning for Robust Face Alignment"  
+# Structure-Coherent Deep Feature Learning for Robust Face Alignment
+This repository contains the code for "Structure-Coherent Deep Feature Learning for Robust Face Alignment"  
 
 # Introduction
 We propose a structure-coherency-aware deep feature learning method for face alignment. Unlike most existing face alignment methods which overlook the facial structure cues, we explicitly exploit the relation among facial landmarks to make the detector robust to hard cases such as occlusion and large pose. We propose a landmark-graph relational network (L-GRN) to enforce the structural relationships among landmarks. Specifically, we consider the facial landmarks as structural graph nodes and carefully design the neighborhoods to passing features among the most related nodes. Our method dynamically adapts the weights of node neighborhoods to eliminate distracted information from noisy nodes, such as occluded landmark point. Moreover, different from most previous works which only tend to penalize the landmarks absolute position during the training, we propose a relative location loss to enhance the information of relative location of landmarks. This relative location supervision further regularizes the facial structure. Our method considers the interactions among facial landmarks and can be easily implemented on top of any convolutional backbone to boost the performance.
