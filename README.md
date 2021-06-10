@@ -18,7 +18,7 @@ to your image directory and annotation file, repectively.
 Acknowledgement: we use the code from [PFLD](https://github.com/guoqiangqi/PFLD/blob/master/data/SetPreparation.py) to preprare the WLFW dataset.
 
 
-# Training from scratch
+# Train from scratch
 To train the L-GRN with ResNet34 Backbone
 
 ```bash
