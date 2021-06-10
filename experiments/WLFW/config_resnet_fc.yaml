@@ -1,0 +1,46 @@
+common: &common
+    num_kpts: 98
+    is_color: true
+    crop_size: 256
+structure:
+    backbone_name: ResNet34Pure
+    receptive_keep: false
+    predictor_name: FCPredictor
+    <<: *common
+train_param:
+    batch_size: 64
+    workers: 4
+    is_occluded: true
+    task_weight: 1
+    laplace_weight: 1
+    is_pdb: 9
+    criterion:
+        type: WiderWing
+        kwargs:
+            curvature: 0.5
+    optimizer:
+        type: SGD
+        kwargs:
+            lr: 0.01
+            momentum: 0.9
+            weight_decay: 0.0005
+    scheduler:
+        milestones: [200, 350]
+        gamma: 0.2
+        epochs: 500
+    scale_min: 0.9314
+    scale_max: 1.0686
+    mirror: true
+    rotation: 40
+    translate_rate: 0.1
+    train_root: data/WFLW/train/Image/
+    train_source: data/WFLW/train/train_98pt.txt
+    print_freq: 30
+    snapshot_freq: 2
+    <<: *common
+test_param:
+    batch_size: 128 
+    workers: 4
+    val_root: data/WFLW/test/Image
+    val_source: data/WFLW/test/test_98pt.txt 
+    <<: *common
